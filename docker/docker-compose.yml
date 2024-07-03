@@ -10,6 +10,8 @@ services:
       - ./mysql/log:/var/log/mysql #ログの永続化
     ports:
       - "3306:3306"
+    networks:
+      - springboot-net
 
   dbclient:
     image: phpmyadmin/phpmyadmin
@@ -26,19 +28,33 @@ services:
     volumes:
       - ./dbclient/sessions:/sessions
     depends_on:
-      - mysql
+      mysql:
+        condition: service_started
+    networks:
+      - springboot-net
 
   java:
-    image: openjdk:22
+    build:
+        context: ../springboot
+        dockerfile: Dockerfile
     container_name: java
     env_file:
       - ./mysql/db.env
     tty: true
     working_dir: /app
-    volumes:
-      - ../springboot:/app
+#    ↓Dokcerfileでコピーするため不要(逆にあると上書きになってjarが見つからない)
+#    volumes:
+#      - ../springboot:/app
     ports:
-      - 8080:8080
-      - 5050:5050
+      - 8080:8080 #アプリケーション用
+      - 5050:5050 #デバッグ用
     depends_on:
-      - mysql
+      mysql:
+        condition: service_started
+    entrypoint: "java -jar /app/app.jar"
+    networks:
+        - springboot-net
+
+networks:
+    springboot-net:
+        driver: bridge

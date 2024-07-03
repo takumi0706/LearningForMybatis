@@ -1,5 +1,6 @@
 # 使い方
 ---
-1. コンソールで"docker-compose up -d dbclient"と打つ
-2. これによってdb,dbclientのserverが立つ
-3. localhost:4200で確認できる
+1. コンソールで"docker-compose up -dit"と打つ
+2. これによってdb,dbclient,springboot(java)のserverが立つ
+3. localhost:4200でdbclientでSQLが確認できる
+4. localhost:8080でSpringBootのWebServerが確認できる。

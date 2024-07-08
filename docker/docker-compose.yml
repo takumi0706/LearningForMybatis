@@ -19,8 +19,8 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=spring_mysql #MySQLのコンテナ名を指定
-      - PMA_USER=root
-      - PMA_PASSWORD=root
+      - PMA_USER=dev_user
+      - PMA_PASSWORD=dev_pass
     links:
       - mysql
     ports:

@@ -1,5 +1,5 @@
 -- データベースの作成
-CREATE DATABASE IF NOT EXISTS spring_dev CHARACTER SET tf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS spring_dev CHARACTER SET utf8 COLLATE utf8_general_ci;
 -- データベースの使用
 USE spring_dev;
 

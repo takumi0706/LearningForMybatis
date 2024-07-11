@@ -1,13 +1,13 @@
-package com.develop.TravelTango;
+package com.develop.LearnForMybatis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TravelTangoApplication {
+public class LearnForMybatisApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TravelTangoApplication.class, args);
+		SpringApplication.run(LearnForMybatisApplication.class, args);
 	}
 
 }

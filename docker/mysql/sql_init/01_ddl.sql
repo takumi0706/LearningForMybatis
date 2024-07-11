@@ -1,11 +1,16 @@
 -- データベースの作成
-CREATE DATABASE IF NOT EXISTS spring_dev CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS sampledb CHARACTER SET utf8 COLLATE utf8_general_ci;
 -- データベースの使用
-USE spring_dev;
+USE sampledb;
 
 -- テーブルの作成
-CREATE TABLE IF NOT EXISTS spring_dev.user_info
-(
-    login_id VARCHAR(50) NOT NULL PRIMARY KEY,
-    password_hash VARCHAR(255) NOT NULL
-);
+CREATE TABLE sampledb.user (
+                            `id`                    BIGINT NOT NULL AUTO_INCREMENT,
+                            `name`    VARCHAR(100)  NOT NULL,
+                            `address` VARCHAR(255)  NULL,
+                            `phone`   VARCHAR(50)   NULL,
+                            `update_date`           DATETIME NOT NULL,
+                            `create_date`           DATETIME NOT NULL,
+                            `delete_date`            DATETIME NULL,
+                            PRIMARY KEY (`id`)
+                           );

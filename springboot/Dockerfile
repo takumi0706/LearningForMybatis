@@ -5,7 +5,7 @@ COPY ./pom.xml .
 RUN mvn clean package
 
 FROM openjdk
-COPY --from=builder /tmp/target/TravelTango-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY --from=builder /tmp/target/LearnForMybatis-0.0.1-SNAPSHOT.jar /app/app.jar
 
 EXPOSE 8080
 EXPOSE 5050

@@ -9,7 +9,7 @@ services:
       - ./mysql/data:/var/lib/mysql #実データの永続化
       - ./mysql/log:/var/log/mysql #ログの永続化
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
       - springboot-net
 
@@ -19,8 +19,8 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=spring_mysql #MySQLのコンテナ名を指定
-      - PMA_USER=dev_user
-      - PMA_PASSWORD=dev_pass
+      - PMA_USER=root
+      - PMA_PASSWORD=password
     links:
       - mysql
     ports:
@@ -54,6 +54,7 @@ services:
     entrypoint: "java -jar /app/app.jar"
     networks:
         - springboot-net
+#TODO: downと同時に削除されるようにする(Java)
 
 networks:
     springboot-net:

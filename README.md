@@ -1,5 +1,3 @@
-Here's a draft README for the LearningForMybatis repository, aimed at helping people learn MyBatis:
-
 # LearningForMybatis
 
 Welcome to the LearningForMybatis repository! This project is designed to help developers learn and understand MyBatis, a popular Java persistence framework.
